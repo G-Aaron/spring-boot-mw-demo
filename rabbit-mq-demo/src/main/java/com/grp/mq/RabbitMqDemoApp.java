@@ -28,7 +28,6 @@ public class RabbitMqDemoApp {
         return new Queue("user");
     }
 
-    //===============以下是验证topic Exchange的队列==========
     @Bean
     public Queue queueMessage() {
         return new Queue("topic.message");
@@ -38,10 +37,6 @@ public class RabbitMqDemoApp {
     public Queue queueMessages() {
         return new Queue("topic.messages");
     }
-    //===============以上是验证topic Exchange的队列==========
-
-
-    //===============以下是验证Fanout Exchange的队列==========
     @Bean
     public Queue AMessage() {
         return new Queue("fanout.A");
@@ -56,13 +51,12 @@ public class RabbitMqDemoApp {
     public Queue CMessage() {
         return new Queue("fanout.C");
     }
-    //===============以上是验证Fanout Exchange的队列==========
-
 
     @Bean
     TopicExchange exchange() {
         return new TopicExchange("exchange");
     }
+
     @Bean
     FanoutExchange fanoutExchange() {
         return new FanoutExchange("fanoutExchange");
