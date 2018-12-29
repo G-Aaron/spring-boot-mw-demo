@@ -1,0 +1,69 @@
+*.DS_Store  
+Thumbs.db  
+*.sw?  
+.#*  
+*#  
+*~  
+*.sublime-*  
+
+# Gradle
+.gradle
+
+testdata/
+# Java gitignore #
+.class
+bin/
+rebel.xml
+
+# Package Files #
+*.war
+*.ear
+
+# maven gitignore#
+target/
+target/**
+!.mvn/wrapper/maven-wrapper.jar
+
+# intelliJ.gitignore #
+.idea
+*.iml
+*.ipr
+*.iws
+
+# Eclipse git ignore#
+*.pydevproject
+.project
+.metadata
+bin/
+bin/**
+*/bin/**
+tmp/**
+tmp/**/*
+configuration/**
+*.tmp
+*.bak
+*.orig
+*.swp
+*~.nib
+.classpath
+.settings/
+.loadpath
+.fileTable*
+.cache
+
+# External tool builders
+.externalToolBuilders/
+
+# Locally stored "Eclipse launch configurations"
+*.launch
+
+# Windows Thumbs.db
+*.db
+
+# log #
+logs/
+*.log
+*.log.*
+
+temp/
+*.pid
