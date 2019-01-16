@@ -5,6 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
 import org.grp.test.mysql.MysqlApplication;
 import org.grp.test.mysql.domain.HouseDetail;
+import org.grp.test.mysql.domain.HouseEvaluateInfo;
 import org.grp.test.mysql.repository.IHouseDetailRepository;
 import org.grp.test.mysql.service.IDataService;
 import org.junit.runner.RunWith;
@@ -32,8 +33,8 @@ public class Test {
 
     @Autowired
     private IHouseDetailRepository houseDetailRepository;
-    @org.junit.Test
-    public void test(){
+@org.junit.Test
+public void test(){
         List<HouseDetail> list = houseDetailRepository.findAll();
         for(HouseDetail detail: list){
             String content = detail.getDetail();
@@ -53,5 +54,15 @@ public class Test {
                 }
             }
         }
+    }
+
+    @org.junit.Test
+    public void test1() throws Exception {
+        //创建文件
+        ExcelWrite.fileExist("E:/小区估价统计.xls");
+        String title[] = {"小区地址","数据源1","小区1","价格1","数据源2","小区2","价格2","数据源3","小区3","价格3","小区名称","时间"};
+        ExcelWrite.createExcel("E:/小区估价统计.xls","sheet1",title);
+        List<HouseEvaluateInfo> list = null;
+        ExcelWrite.writeToExcel("E:/小区估价统计.xls","sheet1",list);
     }
 }
